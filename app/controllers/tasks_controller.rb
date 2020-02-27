@@ -28,7 +28,6 @@ class TasksController < ApplicationController
     
     if @task.save
       TaskMailer.creation_email(@task).deliver_now
-      SampleJob.perform_later
       redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。"  
     else
       render :new
@@ -39,8 +38,8 @@ class TasksController < ApplicationController
   end
 
   def update
-    task.update!(task_params)
-    redirect_to tasks_url, notice: "タスク「#{task.name}」を更新しました。"
+    @task.update!(task_params)
+    redirect_to tasks_url, notice: "タスク「#{@task.name}」を更新しました。"
   end
 
   def destroy
