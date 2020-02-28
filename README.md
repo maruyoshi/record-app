@@ -38,7 +38,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|description|
+|description|text|
 |user|references|null: false, foreign_key: true|
 
 ### Association
@@ -49,3 +49,12 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|unique: true|
+|taggings_count|integer|default: 0|
+
+## Taggingsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|context|string|limit: 128|
+
+
+
