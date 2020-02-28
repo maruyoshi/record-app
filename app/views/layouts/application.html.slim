@@ -9,19 +9,19 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet" /
   body
-    .app-title.navbar.navbar-expand-md.navbar-light.bg-light
-      .navbar-brand Record
+    .app-title.navbar.navbar-expand-md.navbar-light.bg-dark
+      .navbar-light.text-white Record
 
       ul.navbar-nav.ml-auto
         - if current_user
-          li.nav-item= link_to 'タスク一覧', tasks_path, class: 'nav-link'
+          li.nav-item= link_to 'タスク一覧', tasks_path, class: 'nav-link text-white'
           - if current_user.admin?
-            li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
-          li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
+            li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link text-white'
+          li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link text-white'
         - else
-          li.nav-item= link_to 'ログイン', login_path, class: 'nav-link'
+          li.nav-item= link_to 'ログイン', login_path, class: 'nav-link text-white'
 
     .container
       - if flash.notice.present?
-        .alert.alert-success= flash.notice
+        .alert.alert-info = flash.notice
     = yield
