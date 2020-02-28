@@ -15,8 +15,9 @@
         th= Task.human_attribute_name(:description)
         td= auto_link(simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div"))
       tr
+      - if @task.image.attached?
         th= Task.human_attribute_name(:image)
-        td= image_tag @task.image.variant(resize:'600x600').processed if @task.image.attached?
+        td= image_tag @task.image.variant(resize:'600x600').processed 
       tr
         th= Task.human_attribute_name(:created_at)
         td= @task.created_at
