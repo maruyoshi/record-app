@@ -1,24 +1,51 @@
-# README
+# アプリ名：record-app
+記録したメモを検索して確認できるアプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリを作成した目的
+お気に入りの記事やコードを記録したメモが大量になり、
+都度確認するのが大変だなと日々思っておりました。
+それらを記録して簡単に検索ができるアプリがあれば便利だと思い作成しました。
 
-Things you may want to cover:
+## 特徴
 
-* Ruby version
+- slim/SASS記法を使ったマークアップ
+- deviseを使わないユーザー管理
+- ransackとacts-as-taggable-onを使用した検索機能
+- herokuへのデプロイ
+- AWS S3への画像アップロード
+- RSpecを使ったシステムテスト
 
-* System dependencies
+## Requirement
 
-* Configuration
+- Ruby 2.5.1
+- Rails 5.2.1
 
-* Database creation
 
-* Database initialization
+## Usersテーブル
 
-* How to run the test suite
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false, unique: true|
+|password_digest|string|null: false|
+|admin|boolean|default: false, null: false|
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- has_many :tasks
 
-* Deployment instructions
+## Tasksテーブル
 
-* ...
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|description|
+|user|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
+## Tagsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|unique: true|
