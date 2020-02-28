@@ -1,5 +1,11 @@
 # アプリ名：record-app
-記録したメモを検索して確認できるアプリ
+記録したデータを検索して確認できるアプリ
+
+![92e3b0ceb7311724c0ab07dda23c05f1](https://user-images.githubusercontent.com/57203539/75569205-098d3780-5a98-11ea-854c-fd022fde9054.png)
+
+![fdf35c40cd788a69df55029d05bf23f5](https://user-images.githubusercontent.com/57203539/75569832-3aba3780-5a99-11ea-99f0-e05c7dbe8fda.png)
+
+![タグ検索](https://user-images.githubusercontent.com/57203539/75569589-bf588600-5a98-11ea-8556-aec702874762.gif)
 
 ## アプリを作成した目的
 お気に入りの記事やコードを記録したメモが大量になり、
@@ -11,6 +17,7 @@
 - slim/SASS記法を使ったマークアップ
 - deviseを使わないユーザー管理
 - ransackとacts-as-taggable-onを使用した検索機能
+- 記録した内容をcsvファイルでエクスポートできる
 - herokuへのデプロイ
 - AWS S3への画像アップロード
 - RSpecを使ったシステムテスト
