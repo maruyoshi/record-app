@@ -77,3 +77,4 @@ gem 'kaminari'
 gem 'webpacker'
 gem 'mini_magick', '~> 4.8'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem "aws-sdk-s3", require: false
