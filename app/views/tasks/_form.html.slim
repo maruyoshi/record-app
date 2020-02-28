@@ -13,4 +13,10 @@
   .form-group
     = f.label :image
     = f.file_field :image, class: 'form-control'
+  .form-group
+    = f.label :category, 'カテゴリ'
+    = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
+      = category.label do
+        = category.check_box
+        = category.text
   = f.submit nil, class: 'btn btn-primary'

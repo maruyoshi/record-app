@@ -44,6 +44,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
+    redirect_to tasks_url, notice: "タスク「#{@task.name}」を削除しました。"
   end
 
   def confirm_new
@@ -59,7 +60,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description, :image)
+    params.require(:task).permit(:name, :description, :image, category_ids: [])
   end
 
   def set_task
