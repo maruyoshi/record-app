@@ -74,7 +74,7 @@ gem 'rails-i18n'
 gem 'rails_autolink'
 gem 'ransack'
 gem 'kaminari'
-gem 'webpacker'
+# gem 'webpacker'
 gem 'mini_magick', '~> 4.8'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem "aws-sdk-s3", require: false
