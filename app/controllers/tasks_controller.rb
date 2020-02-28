@@ -5,6 +5,11 @@ class TasksController < ApplicationController
     @q = current_user.tasks.ransack(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page]).per(10)
 
+    if params[:tag_name]
+      @tasks = Task.tagged_with("#{params[:tag_name]}")
+      @tasks = @tasks.page(params[:page])
+    end
+
     respond_to do |format|
       format.html
       format.csv { send_data @tasks.generate_csv, filename: "tasks-#{Time.zone.now.strftime('%Y%m%d%S')}.csv"}
@@ -60,7 +65,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description, :image, category_ids: [],:tag_list)
+    params.require(:task).permit(:name, :description, :image,:tag_list,category_ids: [])
   end
 
   def set_task

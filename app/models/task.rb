@@ -31,9 +31,6 @@ class Task < ApplicationRecord
   end
 
   belongs_to :user
-  has_one_attached :image
-  has_many :task_categories
-  has_many :categories, through: :task_categories
   scope :recent, -> { order(created_at: :desc) }
   has_one_attached :image
   acts_as_taggable 
