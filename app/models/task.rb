@@ -36,6 +36,7 @@ class Task < ApplicationRecord
   has_many :categories, through: :task_categories
   scope :recent, -> { order(created_at: :desc) }
   has_one_attached :image
+  acts_as_taggable 
   private
 
   def validate_name_not_including_comma
