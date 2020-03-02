@@ -1,7 +1,7 @@
 # アプリ名：record-app
 記録したデータを検索して確認できるアプリ
 
-[link](https://record-app2.herokuapp.com/){:target="_blank"}
+[record-app URL](https://record-app2.herokuapp.com/)
 
 ログインID: admin@example.com
 
