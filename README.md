@@ -1,6 +1,10 @@
 # アプリ名：record-app
 記録したデータを検索して確認できるアプリ
 
+https://record-app2.herokuapp.com/
+ログインID: admin@example.com
+パスワード: password
+
 ![92e3b0ceb7311724c0ab07dda23c05f1](https://user-images.githubusercontent.com/57203539/75569205-098d3780-5a98-11ea-854c-fd022fde9054.png)
 
 ![fdf35c40cd788a69df55029d05bf23f5](https://user-images.githubusercontent.com/57203539/75569832-3aba3780-5a99-11ea-99f0-e05c7dbe8fda.png)
